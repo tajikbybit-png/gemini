@@ -1,0 +1,243 @@
+:root {
+    --bg-primary: #1e1e2e;
+    --bg-secondary: #181825;
+    --bg-tertiary: #313244;
+    --text-color: #cdd6f4;
+    --accent-color: #89b4fa;
+    --success-color: #a6e3a1;
+    --border-color: #45475a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ide-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ide-header {
+    background-color: var(--bg-secondary);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.ide-header h1 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: var(--bg-primary);
+}
+
+.btn-secondary {
+    background-color: var(--bg-tertiary);
+    color: var(--text-color);
+}
+
+.ide-main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.section-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #a6adc8;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.mt-4 {
+    margin-top: 25px;
+}
+
+.file-list, .lesson-list {
+    list-style: none;
+}
+
+.file-item, .lesson-item {
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+.file-item:hover, .lesson-item:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.file-item.active {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    font-weight: bold;
+}
+
+.editor-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+}
+
+.editor-toolbar {
+    background-color: var(--bg-secondary);
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--accent-color);
+}
+
+.code-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.line-numbers {
+    width: 40px;
+    background-color: var(--bg-secondary);
+    color: #6c7086;
+    padding: 10px 5px;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    user-select: none;
+    line-height: 1.5;
+}
+
+#code-editor {
+    flex: 1;
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    resize: none;
+    outline: none;
+    line-height: 1.5;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: auto;
+}
+
+.output-panel {
+    width: 320px;
+    background-color: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.output-tabs {
+    background-color: var(--bg-tertiary);
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.output-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.input-group, .console-output {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label, .console-output label {
+    font-size: 0.8rem;
+    color: #a6adc8;
+}
+
+#stdin-input {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 4px;
+    resize: none;
+    height: 70px;
+    font-family: monospace;
+}
+
+#stdout-output {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--success-color);
+    padding: 10px;
+    border-radius: 4px;
+    flex: 1;
+    font-family: monospace;
+    font-size: 0.9rem;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
