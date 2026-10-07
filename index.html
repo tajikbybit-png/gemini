@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Муҳити Рушди C++ (C++ IDE)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ide-container">
+        <!-- Сарлавҳа -->
+        <header class="ide-header">
+            <div class="logo">
+                <span class="badge">C++ IDE</span>
+                <h1>Муҳити Барномасозии тоҷикӣ</h1>
+            </div>
+            <div class="actions">
+                <button id="run-btn" class="btn btn-success">Иҷро кардан (Run)</button>
+                <button id="reset-btn" class="btn btn-secondary">Аз нав</button>
+            </div>
+        </header>
+
+        <!-- Қисми асосӣ -->
+        <div class="ide-main">
+            <!-- Панели чап: Менеҷери файлҳо ва дарсҳо -->
+            <aside class="sidebar">
+                <div class="section-title">Файлҳои Лоиҳа</div>
+                <ul id="file-list" class="file-list">
+                    <li class="file-item active" data-file="main.cpp">main.cpp</li>
+                    <li class="file-item" data-file="utils.h">utils.h</li>
+                </ul>
+
+                <div class="section-title mt-4">Дарсҳои C++</div>
+                <ul class="lesson-list">
+                    <li class="lesson-item" data-lesson="1">1. Салому алайк (Hello World)</li>
+                    <li class="lesson-item" data-lesson="2">2. Тағйирёбандаҳо</li>
+                    <li class="lesson-item" data-lesson="3">3. Шартҳо (if/else)</li>
+                </ul>
+            </aside>
+
+            <!-- Муҳаррири код -->
+            <main class="editor-area">
+                <div class="editor-toolbar">
+                    <span id="current-file-label">main.cpp</span>
+                </div>
+                <div class="code-wrapper">
+                    <div id="line-numbers" class="line-numbers">1</div>
+                    <textarea id="code-editor" spellcheck="false" placeholder="Коди C++ худро ин ҷо нависед..."></textarea>
+                </div>
+            </main>
+
+            <!-- Панели рост: Натиҷа ва Вуруд -->
+            <section class="output-panel">
+                <div class="output-tabs">
+                    <button class="tab-btn active">Натиҷа (Output)</button>
+                </div>
+                <div class="output-content">
+                    <div class="input-group">
+                        <label for="stdin-input">Вуруд (stdin):</label>
+                        <textarea id="stdin-input" placeholder="Маълумот барои ворид кардан..."></textarea>
+                    </div>
+                    <div class="console-output">
+                        <label>Натиҷаи иҷро (stdout):</label>
+                        <pre id="stdout-output">Барнома омода аст...</pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
